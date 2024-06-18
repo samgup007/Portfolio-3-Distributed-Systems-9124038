@@ -1,0 +1,21 @@
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+<persistence-unit name="de.fhws.fiw.fds.sutton">
+    <description>How to use Hibernate with Sutton</description>
+    <class>de.fhws.fiw.fds.sutton.server.database.hibernate.models.AbstractDBModel</class>
+    <class>de.fhws.fiw.fds.sutton.server.database.hibernate.models.AbstractDBRelation</class>
+    <!--<class>de.fhws.fiw.fds.suttondemo.server.database.hibernate.models.PersonDB</class>
+    <class>de.fhws.fiw.fds.suttondemo.server.database.hibernate.models.LocationDB</class>
+    <class>de.fhws.fiw.fds.suttondemo.server.database.hibernate.models.PersonLocationDB</class> -->
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+        <property name="hibernate.hbm2ddl.auto" value="create"/>
+        <property name="hibernate.show_sql" value="true"/>
+        <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
+        <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:PersonDemo;DB_CLOSE_DELAY=-1"/>
+        <property name="jakarta.persistence.jdbc.user" value="sa"/>
+        <property name="jakarta.persistence.jdbc.password" value=""/>
+    </properties>
+</persistence-unit>
+</persistence>
